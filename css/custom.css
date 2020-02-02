@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "DroidKufi";
+  font-style: normal;
+  font-weight: 400;
+  src: local("DroidKufi"), local("DroidKufi-Regular"),
+    url(../fonts/DroidKufi/DroidKufi-Regular.ttf) format("truetype"),
+    local("DroidKufi"), local("DroidKufi-Regular"),
+    url(../fonts/DroidKufi/DroidKufi-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "BoldDroidKufi";
+  font-style: normal;
+  font-weight: 400;
+  src: local("DroidKufi"), local("DroidKufi-Bold"),
+    url(../fonts/DroidKufi/DroidKufi-Bold.ttf) format("truetype"),
+    local("DroidKufi"), local("DroidKufi-Bold"),
+    url(../fonts/DroidKufi/DroidKufi-Bold.ttf) format("truetype");
+}
+
+* {
+  font-family: "DroidKufi";
+}
