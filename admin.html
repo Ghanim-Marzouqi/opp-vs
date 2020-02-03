@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>بوابة سجل الزيارات</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <style>
+      .logo {
+        font-family: "BoldDroidKufi";
+        color: #ffffff;
+      }
+
+      section {
+        padding: 30px;
+      }
+
+      .panel {
+        margin: 10px;
+      }
+
+      .card-header {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      label {
+        font-size: 14px;
+      }
+
+      th {
+        font-weight: bold;
+        font-size: small;
+      }
+
+      .required {
+        color: #f62459;
+      }
+
+      #admin-settings {
+        margin: 10px;
+        color: #ffffff;
+        font-size: x-large;
+      }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+      <div class="navbar-brand logo" href="#" style="color: #ffffff;">
+        بوابة سجل الزيارات
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <div class="form-inline my-2 my-lg-0 logo">
+          الأسم: غانم سالم سعيد المرزوقي
+        </div>
+        <div>
+          <a id="admin-settings" href="./index.html"
+            ><i class="fas fa-home"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <div class="container-fluid">
+      <section>
+        <div class="card">
+          <div class="card-header">
+            <button
+              type="button"
+              class="btn btn-info btn-sm"
+              data-toggle="modal"
+              data-target="#UserEntryModal"
+            >
+              <i class="fas fa-user-plus"></i> إضافة مستخدم جديد
+            </button>
+          </div>
+          <div class="card-body">
+            <table id="table" class="table table-sm table-bordered text-nowrap">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    اسم موظف الأمن
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    رقم البطاقة الشخصية
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تاريخ ووقت الإضافة
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تاريخ التعديل
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    المديرية
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    الادارة
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تعديل
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    حذف
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td>غانم سالم سعيد المرزوقي</td>
+                  <td>12345678</td>
+                  <td>12/01/2020</td>
+                  <td>12/01/2020</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>غانم سالم سعيد المرزوقي</td>
+                  <td>12345678</td>
+                  <td>12/01/2020</td>
+                  <td>12/01/2020</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>غانم سالم سعيد المرزوقي</td>
+                  <td>12345678</td>
+                  <td>12/01/2020</td>
+                  <td>12/01/2020</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>غانم سالم سعيد المرزوقي</td>
+                  <td>12345678</td>
+                  <td>12/01/2020</td>
+                  <td>12/01/2020</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>غانم سالم سعيد المرزوقي</td>
+                  <td>12345678</td>
+                  <td>12/01/2020</td>
+                  <td>12/01/2020</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- VISIT ENTRY MODAL -->
+    <div
+      id="UserEntryModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="visitorModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="visitorModalLabel">
+              تسجيل مستخدم أمن جديد
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="ddlDirectorates">
+                <span class="required">*</span>
+                اختر المديرية:
+              </label>
+              <select id="ddlDirectorates" class="form-control form-control-sm">
+                <option>...</option>
+                <option>مديرية مسقط</option>
+                <option>مديرية شمال الباطنة</option>
+                <option>مديرية جنوب الباطنة</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ddlUsers">
+                <span class="required">*</span>
+                اختر المستخدم:
+              </label>
+              <select id="ddlUsers" class="form-control form-control-sm">
+                <option>...</option>
+                <option>غانم سالم سعيد المرزوقي</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              إغلاق
+            </button>
+            <button type="button" class="btn btn-primary">حفظ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS Files -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- CUSTOM JS -->
+    <script>
+      $(document).ready(() => {
+        $("#table").DataTable({
+          language: {
+            sEmptyTable: "ليست هناك بيانات متاحة في الجدول",
+            sLoadingRecords: "جارٍ التحميل...",
+            sProcessing: "جارٍ التحميل...",
+            sLengthMenu: "_MENU_",
+            sZeroRecords: "لم يعثر على أية سجلات",
+            sInfo: "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+            sInfoEmpty: "يعرض 0 إلى 0 من أصل 0 سجل",
+            sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
+            sInfoPostFix: "",
+            sSearch: "ابحث:",
+            sUrl: "",
+            oPaginate: {
+              sFirst: "الأول",
+              sPrevious: "السابق",
+              sNext: "التالي",
+              sLast: "الأخير"
+            },
+            oAria: {
+              sSortAscending: ": تفعيل لترتيب العمود تصاعدياً",
+              sSortDescending: ": تفعيل لترتيب العمود تنازلياً"
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

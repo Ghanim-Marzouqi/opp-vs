@@ -29,6 +29,11 @@
 
       .card-header {
         font-weight: bold;
+        font-size: 14px;
+      }
+
+      label {
+        font-size: 14px;
       }
 
       th {
@@ -45,14 +50,23 @@
         color: #ffffff;
         font-size: x-large;
       }
+
+      /* Chrome, Safari, Edge, Opera */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Firefox */
+      input[type="number"] {
+        -moz-appearance: textfield;
+      }
     </style>
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark"
-      style="background-color: #428BCA;"
-    >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
       <div class="navbar-brand logo" href="#" style="color: #ffffff;">
         بوابة سجل الزيارات
       </div>
@@ -74,7 +88,9 @@
           الأسم: غانم سالم سعيد المرزوقي
         </div>
         <div>
-          <a id="admin-settings" href="#"><i class="fas fa-cogs"></i></a>
+          <a id="admin-settings" href="./admin.html"
+            ><i class="fas fa-cogs"></i
+          ></a>
         </div>
       </div>
     </nav>
@@ -85,159 +101,194 @@
         <!-- SREARCH -->
         <div class="card">
           <div class="card-header">
-            شاشة البحث فى سجل الزيارات
-          </div>
-          <div class="card-body">
-            <div class="card panel">
-              <div class="card-header">
-                بيانات الزائر
-              </div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="tbIDNumber"
-                        ><span class="required">*</span>رقم البطاقة
-                        الشخصية:</label
-                      >
-                      <input
-                        type="number"
-                        id="tbIDNumber"
-                        class="form-control"
-                        placeholder="ادخل رقم البطاقة الشخصية"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="tbVisitorName"><span class="required">*</span>اسم الزائر:</label>
-                      <input
-                        type="text"
-                        id="tbVisitorName"
-                        class="form-control"
-                        placeholder="ادخل اسم الزائر"
-                      />
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="tbCaseNumber">رقم القضية:</label>
-                      <input
-                        type="number"
-                        id="tbCaseNumber"
-                        class="form-control"
-                        placeholder="ادخل رقم القضية"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card panel">
-              <div class="card-header">تاريخ وحالة الزيارة</div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="dpFrom">تاريخ وقت الزيارة من:</label>
-                      <input type="date" id="dpFrom" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="dpTo">تاريخ وقت الزيارة إلى:</label>
-                      <input type="date" id="dpTo" class="form-control" />
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="chkVisitStatus">حالة الزيارة:</label>
-                      <div class="form-check">
-                        <input
-                          type="checkbox"
-                          id="chkVisitStatus"
-                          class="form-check-input"
-                          checked
-                        />
-                        <label id="chkVisitStatusLabel" class="form-check-label" for="chkVisitStatus">
-                          منتهية
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card panel">
-              <div class="card-header">بيانات الموظف المختص</div>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="ddlDirectorate"><span class="required">*</span>المديرية</label>
-                      <select id="ddlDirectorate" class="form-control">
-                        <option></option>
-                        <option>الهيئة</option>
-                        <option>مسقط</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="ddlDepartment"><span class="required">*</span>الإدارة</label>
-                      <select id="ddlDepartment" class="form-control">
-                        <option></option>
-                        <option>الهيئة</option>
-                        <option>مسقط</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-4">
-                    <div class="form-group">
-                      <label for="tbEmployeeName"><span class="required">*</span>اسم الموظف المختص</label>
-                      <input
-                        type="text"
-                        id="tbEmployeeName"
-                        class="form-control"
-                        placeholder="ادخل اسم الموظف المختص"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-footer text-center">
-            <button type="button" class="btn btn-info btn-lg">بحث</button>
-            <button type="button" class="btn btn-info btn-lg">
-              مسح الحقول
+            <button
+              type="button"
+              id="btnShowSearchDialog"
+              class="btn btn-info btn-sm"
+            >
+              <i class="fas fa-search"></i> البحث في الزيارات
             </button>
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#VisitEntryModal">إضافة</button>
+            <button
+              type="button"
+              class="btn btn-info btn-sm"
+              data-toggle="modal"
+              data-target="#VisitEntryModal"
+            >
+              <i class="fas fa-user-plus"></i> إضافة زائر
+            </button>
+          </div>
+          <div id="searchDialog">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="tbIDNumber">رقم البطاقة الشخصية:</label>
+                    <input
+                      type="number"
+                      id="tbIDNumber"
+                      class="form-control form-control-sm"
+                      placeholder="ادخل رقم البطاقة الشخصية"
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="tbVisitorName">اسم الزائر:</label>
+                    <input
+                      type="text"
+                      id="tbVisitorName"
+                      class="form-control form-control-sm"
+                      placeholder="ادخل اسم الزائر"
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="tbCaseNumber">رقم القضية:</label>
+                    <input
+                      type="text"
+                      id="tbCaseNumber"
+                      class="form-control form-control-sm"
+                      placeholder="ادخل رقم القضية"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="dpFrom">تاريخ وقت الزيارة من:</label>
+                    <input
+                      type="date"
+                      id="dpFrom"
+                      class="form-control form-control-sm"
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="dpTo">تاريخ وقت الزيارة إلى:</label>
+                    <input
+                      type="date"
+                      id="dpTo"
+                      class="form-control form-control-sm"
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="chkVisitStatus">حالة الزيارة:</label>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="chkVisitStatus"
+                        class="form-check-input"
+                        checked
+                      />
+                      <label
+                        id="chkVisitStatusLabel"
+                        class="form-check-label"
+                        for="chkVisitStatus"
+                      >
+                        منتهية
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="ddlDirectorate">المديرية</label>
+                    <select
+                      id="ddlDirectorate"
+                      class="form-control form-control-sm"
+                    >
+                      <option></option>
+                      <option>الهيئة</option>
+                      <option>مسقط</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="ddlDepartment">الإدارة</label>
+                    <select
+                      id="ddlDepartment"
+                      class="form-control form-control-sm"
+                    >
+                      <option></option>
+                      <option>الهيئة</option>
+                      <option>مسقط</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="tbEmployeeName">اسم الموظف المختص</label>
+                    <input
+                      type="text"
+                      id="tbEmployeeName"
+                      class="form-control form-control-sm"
+                      placeholder="ادخل اسم الموظف المختص"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <button type="button" class="btn btn-info btn-sm">
+                <i class="fas fa-search"></i> بحث
+              </button>
+              <button type="button" class="btn btn-info btn-sm">
+                <i class="fas fa-broom"></i> مسح الحقول
+              </button>
+            </div>
           </div>
         </div>
       </section>
       <section>
         <div class="card">
-          <div class="card-header">نتائج البحث</div>
+          <div class="card-header">الزيارات</div>
           <div class="card-body">
-            <table class="table table-sm table-bordered text-nowrap">
+            <table id="table" class="table table-sm table-bordered text-nowrap">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col">رقم بطاقة الأمن</th>
-                  <th scope="col">رقم البطاقة الشخصية</th>
-                  <th scope="col">اسم الزائر</th>
-                  <th scope="col">تاريخ الزيارة من</th>
-                  <th scope="col">تاريخ الزيارة إلى</th>
-                  <th scope="col">المديرية</th>
-                  <th scope="col">الادارة</th>
-                  <th scope="col">حالة الزيارة</th>
-                  <th scope="col">تفاصيل الزيارة</th>
-                  <th scope="col">إنهاء الزيارة</th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    رقم بطاقة الأمن
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    رقم البطاقة الشخصية
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    اسم الزائر
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تاريخ الزيارة من
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تاريخ الزيارة إلى
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    المديرية
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    الادارة
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    حالة الزيارة
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    تفاصيل الزيارة
+                  </th>
+                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                    إنهاء الزيارة
+                  </th>
                 </tr>
               </thead>
               <tbody class="text-center">
                 <tr>
-                  <th>1234</th>
+                  <td>1234</td>
                   <td>12345678</td>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12/01/2020</td>
@@ -246,12 +297,19 @@
                   <td>مكافحة المخدرات</td>
                   <td>غير منتهية</td>
                   <td>
-                    <a href="#" data-toggle="modal" data-target="#VisitDetailsModal"><i class="fas fa-eye"></i></a>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#VisitDetailsModal"
+                      ><i class="fas fa-eye"></i
+                    ></a>
                   </td>
-                  <td><a href="#"><i class="fas fa-times required"></i></a></i></td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
                 </tr>
                 <tr>
-                  <th>1234</th>
+                  <td>1234</td>
                   <td>12345678</td>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12/01/2020</td>
@@ -260,12 +318,19 @@
                   <td>مكافحة المخدرات</td>
                   <td>غير منتهية</td>
                   <td>
-                    <a href="#" data-toggle="modal" data-target="#VisitDetailsModal"><i class="fas fa-eye"></i></a>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#VisitDetailsModal"
+                      ><i class="fas fa-eye"></i
+                    ></a>
                   </td>
-                  <td><a href="#"><i class="fas fa-times required"></i></a></i></td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
                 </tr>
                 <tr>
-                  <th>1234</th>
+                  <td>1234</td>
                   <td>12345678</td>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12/01/2020</td>
@@ -274,12 +339,19 @@
                   <td>مكافحة المخدرات</td>
                   <td>غير منتهية</td>
                   <td>
-                    <a href="#" data-toggle="modal" data-target="#VisitDetailsModal"><i class="fas fa-eye"></i></a>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#VisitDetailsModal"
+                      ><i class="fas fa-eye"></i
+                    ></a>
                   </td>
-                  <td><a href="#"><i class="fas fa-times required"></i></a></i></td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
                 </tr>
                 <tr>
-                  <th>1234</th>
+                  <td>1234</td>
                   <td>12345678</td>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12/01/2020</td>
@@ -288,12 +360,19 @@
                   <td>مكافحة المخدرات</td>
                   <td>غير منتهية</td>
                   <td>
-                    <a href="#" data-toggle="modal" data-target="#VisitDetailsModal"><i class="fas fa-eye"></i></a>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#VisitDetailsModal"
+                      ><i class="fas fa-eye"></i
+                    ></a>
                   </td>
-                  <td><a href="#"><i class="fas fa-times required"></i></a></i></td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
                 </tr>
                 <tr>
-                  <th>1234</th>
+                  <td>1234</td>
                   <td>12345678</td>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12/01/2020</td>
@@ -302,9 +381,16 @@
                   <td>مكافحة المخدرات</td>
                   <td>غير منتهية</td>
                   <td>
-                    <a href="#" data-toggle="modal" data-target="#VisitDetailsModal"><i class="fas fa-eye"></i></a>
+                    <a
+                      href="#"
+                      data-toggle="modal"
+                      data-target="#VisitDetailsModal"
+                      ><i class="fas fa-eye"></i
+                    ></a>
                   </td>
-                  <td><a href="#"><i class="fas fa-times required"></i></a></i></td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -313,13 +399,30 @@
       </section>
 
       <!-- VISIT ENTRY MODAL -->
-      <div id="VisitEntryModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div
+        id="VisitEntryModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="visitorModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-lg"
+          role="document"
+        >
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">تسجيل زائر جديد</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+              <h5 class="modal-title" id="visitorModalLabel">
+                تسجيل زائر جديد
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <i class="fas fa-times"></i>
               </button>
             </div>
             <div class="modal-body">
@@ -331,50 +434,56 @@
                   <div class="row">
                     <div class="col-6">
                       <div class="form-group">
-                        <label for="tbIDNumberModal"
-                          ><span class="required">*</span>رقم البطاقة
-                          الشخصية:</label
+                        <label for="tbSecurityNumberModal"
+                          ><span class="required">*</span> رقم بطاقة
+                          الأمن:</label
                         >
                         <input
                           type="number"
+                          id="tbSecurityNumberModal"
+                          class="form-control form-control-sm"
+                          placeholder="ادخل رقم بطاقة الأمن"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="tbIDNumberModal">
+                          <span class="required">*</span>
+                          رقم البطاقة الشخصية:
+                        </label>
+                        <input
+                          type="number"
                           id="tbIDNumberModal"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           placeholder="ادخل رقم البطاقة الشخصية"
                         />
                       </div>
                     </div>
-                      <div class="col-6">
-                        <div class="form-group">
-                          <label for="tbVisitorNameModal"><span class="required">*</span>اسم الزائر:</label>
-                          <input
-                            type="text"
-                            id="tbVisitorNameModal"
-                            class="form-control"
-                            placeholder="ادخل اسم الزائر"
-                          />
-                        </div>
-                      </div>
                   </div>
                   <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="tbVisitorNameModal">
+                          <span class="required">*</span>
+                          اسم الزائر:
+                        </label>
+                        <input
+                          type="text"
+                          id="tbVisitorNameModal"
+                          class="form-control form-control-sm"
+                          placeholder="ادخل اسم الزائر"
+                        />
+                      </div>
+                    </div>
                     <div class="col-6">
                       <div class="form-group">
                         <label for="tbCaseNumber">رقم القضية:</label>
                         <input
                           type="number"
                           id="tbCaseNumber"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           placeholder="ادخل رقم القضية"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-6">
-                      <div class="form-group">
-                        <label for="tbCaseNumber">تاريخ الزيارة:</label>
-                        <input
-                          type="text"
-                          id="tbCaseNumber"
-                          class="form-control"
-                          disabled
                         />
                       </div>
                     </div>
@@ -382,8 +491,16 @@
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">
-                        <label for="tbVisitReason"><span class="required">*</span>سبب الزيارة:</label>
-                        <textarea id="tbVisitReason" rows="5" class="form-control" placeholder="اكتب تفاصيل الموضوع"></textarea>
+                        <label for="tbVisitReason">
+                          <span class="required">*</span>
+                          سبب الزيارة:
+                        </label>
+                        <textarea
+                          id="tbVisitReason"
+                          rows="5"
+                          class="form-control form-control-sm"
+                          placeholder="اكتب تفاصيل الموضوع"
+                        ></textarea>
                       </div>
                     </div>
                   </div>
@@ -391,7 +508,13 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                إغلاق
+              </button>
               <button type="button" class="btn btn-primary">حفظ</button>
             </div>
           </div>
@@ -399,18 +522,32 @@
       </div>
 
       <!-- VISIT DETAILS MODAL -->
-      <div id="VisitDetailsModal"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div
+        id="VisitDetailsModal"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-xl"
+          role="document"
+        >
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">تفاصيل الزيارة</h5>
               <div class="close">
                 <a href="#"><i class="fas fa-edit"></i></a>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="fas fa-times"></i>
-              </button>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <i class="fas fa-times"></i>
+                </button>
               </div>
-              
             </div>
             <div class="modal-body">
               <div class="card panel">
@@ -419,39 +556,51 @@
                 </div>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                       <div class="form-group">
-                        <label for="tbIDNumber">رقم البطاقة
-                          الشخصية:</label
-                        >
+                        <label for="tbIDNumber">رقم بطاقة الأمن:</label>
                         <input
                           type="number"
                           id="tbIDNumber"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           disabled
                           value="12345678"
                         />
                       </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label for="tbIDNumber">رقم البطاقة الشخصية:</label>
+                        <input
+                          type="number"
+                          id="tbIDNumber"
+                          class="form-control form-control-sm"
+                          disabled
+                          value="12345678"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
                       <div class="form-group">
                         <label for="tbVisitorName">اسم الزائر:</label>
                         <input
                           type="text"
                           id="tbVisitorName"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           disabled
                           value="غانم سالم سعيد المرزوقي"
                         />
                       </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                       <div class="form-group">
                         <label for="tbCaseNumber">رقم القضية:</label>
                         <input
                           type="number"
                           id="tbCaseNumber"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           disabled
                           value="1234"
                         />
@@ -472,7 +621,7 @@
                         <input
                           type="text"
                           id="tbIDNumber"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           disabled
                           value="02/02/2020 10:30 AM"
                         />
@@ -484,7 +633,7 @@
                         <input
                           type="text"
                           id="tbIDNumber"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           disabled
                           value="02/02/2020 12:00 PM"
                         />
@@ -499,10 +648,60 @@
                             id="chkVisitStatusModal"
                             class="form-check-input"
                           />
-                          <label id="chkVisitStatusLabelModal" class="form-check-label" for="chkVisitStatusModal">
+                          <label
+                            id="chkVisitStatusLabelModal"
+                            class="form-check-label"
+                            for="chkVisitStatusModal"
+                          >
                             غير منتهية
                           </label>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="ddlDirectorate"
+                          ><span class="required">*</span>المديرية</label
+                        >
+                        <select
+                          id="ddlDirectorate"
+                          class="form-control form-control-sm"
+                        >
+                          <option></option>
+                          <option>الهيئة</option>
+                          <option>مسقط</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="ddlDepartment"
+                          ><span class="required">*</span>الإدارة</label
+                        >
+                        <select
+                          id="ddlDepartment"
+                          class="form-control form-control-sm"
+                        >
+                          <option></option>
+                          <option>الهيئة</option>
+                          <option>مسقط</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label for="tbEmployeeName"
+                          ><span class="required">*</span>اسم الموظف
+                          المختص</label
+                        >
+                        <input
+                          type="text"
+                          id="tbEmployeeName"
+                          class="form-control form-control-sm"
+                          placeholder="ادخل اسم الموظف المختص"
+                        />
                       </div>
                     </div>
                   </div>
@@ -512,7 +711,7 @@
                         <label for="tbVisitReasonModel">سبب الزيارة:</label>
                         <textarea
                           id="tbVisitReasonModel"
-                          class="form-control"
+                          class="form-control form-control-sm"
                           rows="5"
                         ></textarea>
                       </div>
@@ -522,22 +721,63 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                إغلاق
+              </button>
               <button type="button" class="btn btn-info">تعديل</button>
               <button type="button" class="btn btn-primary">حفظ</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <!-- JS Files -->
-    <script src="./js/jquery-3.3.1.slim.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/dataTables.bootstrap4.min.js"></script>
 
     <!-- CUSTOM JS -->
     <script>
       $(document).ready(() => {
+        // when document loads
+        $("#searchDialog").hide();
+        $("#table").DataTable({
+          language: {
+            sEmptyTable: "ليست هناك بيانات متاحة في الجدول",
+            sLoadingRecords: "جارٍ التحميل...",
+            sProcessing: "جارٍ التحميل...",
+            sLengthMenu: "_MENU_",
+            sZeroRecords: "لم يعثر على أية سجلات",
+            sInfo: "إظهار _START_ إلى _END_ من أصل _TOTAL_ مدخل",
+            sInfoEmpty: "يعرض 0 إلى 0 من أصل 0 سجل",
+            sInfoFiltered: "(منتقاة من مجموع _MAX_ مُدخل)",
+            sInfoPostFix: "",
+            sSearch: "ابحث:",
+            sUrl: "",
+            oPaginate: {
+              sFirst: "الأول",
+              sPrevious: "السابق",
+              sNext: "التالي",
+              sLast: "الأخير"
+            },
+            oAria: {
+              sSortAscending: ": تفعيل لترتيب العمود تصاعدياً",
+              sSortDescending: ": تفعيل لترتيب العمود تنازلياً"
+            }
+          }
+        });
+
+        // toggle search dialog
+        $("#btnShowSearchDialog").click(e => {
+          $("#searchDialog").toggle(300);
+        });
 
         // checkbox change handler
         $("#chkVisitStatus").change(e => {
