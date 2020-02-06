@@ -62,6 +62,17 @@
       input[type="number"] {
         -moz-appearance: textfield;
       }
+
+      .page-item.active .page-link {
+        z-index: 1;
+        color: #ffffff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+      }
+
+      .select {
+        padding: 0px;
+      }
     </style>
   </head>
 
@@ -99,10 +110,12 @@
     <!-- CONTENT -->
     <div class="container-fluid">
       <section>
-        <div class="card">
+        <div class="card panel">
           <div class="card-header">
+            مكاتب الأمن
             <button
               type="button"
+              style="float: left;"
               class="btn btn-info btn-sm"
               data-toggle="modal"
               data-target="#OfficeEntryModal"
@@ -111,31 +124,170 @@
             </button>
           </div>
           <div class="card-body">
+            <table class="table table-sm table-bordered text-nowrap">
+              <thead class="thead-light">
+                <tr>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    اسم مكتب الأمن
+                  </th>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    المديرية
+                  </th>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    الادارة
+                  </th>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    تعديل
+                  </th>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    حذف
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <td>مكتب أمن الرئاسة</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>مكتب أمن الرئاسة</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>مكتب أمن الرئاسة</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>مكتب أمن الرئاسة</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>مكتب أمن الرئاسة</td>
+                  <td>الرئاسة</td>
+                  <td>مكتب الأمن</td>
+                  <td>
+                    <a href="#"><i class="fas fa-edit"></i></a>
+                  </td>
+                  <td>
+                    <a href="#"><i class="fas fa-times required"></i></a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card panel">
+          <div class="card-header">
+            موظفو مكتب الأمن
+            <button
+              type="button"
+              style="float: left;"
+              class="btn btn-info btn-sm"
+              data-toggle="modal"
+              data-target="#GuardEntryModal"
+            >
+              <i class="fas fa-user-shield"></i> إضافة موظف امن جديد
+            </button>
+          </div>
+          <div class="card-body">
             <table id="table" class="table table-sm table-bordered text-nowrap">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     اسم موظف الأمن
                   </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     رقم البطاقة الشخصية
                   </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
+                    اسم مكتب الأمن
+                  </th>
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     تاريخ ووقت الإضافة
                   </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     تاريخ التعديل
                   </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
-                    المديرية
-                  </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
-                    الادارة
-                  </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     تعديل
                   </th>
-                  <th scope="col" class="bg-info" style="color: #ffffff;">
+                  <th
+                    scope="col"
+                    class="bg-info text-center"
+                    style="color: #ffffff;"
+                  >
                     حذف
                   </th>
                 </tr>
@@ -144,10 +296,9 @@
                 <tr>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12345678</td>
+                  <td>مكتب أمن الهيئة</td>
                   <td>12/01/2020</td>
                   <td>12/01/2020</td>
-                  <td>الرئاسة</td>
-                  <td>مكتب الأمن</td>
                   <td>
                     <a href="#"><i class="fas fa-edit"></i></a>
                   </td>
@@ -158,10 +309,9 @@
                 <tr>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12345678</td>
+                  <td>مكتب أمن الهيئة</td>
                   <td>12/01/2020</td>
                   <td>12/01/2020</td>
-                  <td>الرئاسة</td>
-                  <td>مكتب الأمن</td>
                   <td>
                     <a href="#"><i class="fas fa-edit"></i></a>
                   </td>
@@ -172,10 +322,9 @@
                 <tr>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12345678</td>
+                  <td>مكتب أمن الهيئة</td>
                   <td>12/01/2020</td>
                   <td>12/01/2020</td>
-                  <td>الرئاسة</td>
-                  <td>مكتب الأمن</td>
                   <td>
                     <a href="#"><i class="fas fa-edit"></i></a>
                   </td>
@@ -186,10 +335,9 @@
                 <tr>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12345678</td>
+                  <td>مكتب أمن الهيئة</td>
                   <td>12/01/2020</td>
                   <td>12/01/2020</td>
-                  <td>الرئاسة</td>
-                  <td>مكتب الأمن</td>
                   <td>
                     <a href="#"><i class="fas fa-edit"></i></a>
                   </td>
@@ -200,10 +348,9 @@
                 <tr>
                   <td>غانم سالم سعيد المرزوقي</td>
                   <td>12345678</td>
+                  <td>مكتب أمن الهيئة</td>
                   <td>12/01/2020</td>
                   <td>12/01/2020</td>
-                  <td>الرئاسة</td>
-                  <td>مكتب الأمن</td>
                   <td>
                     <a href="#"><i class="fas fa-edit"></i></a>
                   </td>
@@ -260,9 +407,12 @@
                 <span class="required">*</span>
                 اختر المديرية:
               </label>
-              <select id="ddlDirectorates" class="form-control form-control-sm">
+              <select
+                id="ddlDirectorates"
+                class="form-control form-control-sm select"
+              >
                 <option>...</option>
-                <option>الهيئة</option>
+                <option class="text-center">الهيئة</option>
               </select>
             </div>
             <div class="form-group">
@@ -270,9 +420,12 @@
                 <span class="required">*</span>
                 اختر الإدارة:
               </label>
-              <select id="ddlDirectorates" class="form-control form-control-sm">
+              <select
+                id="ddlDirectorates"
+                class="form-control form-control-sm select"
+              >
                 <option>...</option>
-                <option>مكتب الأمن</option>
+                <option class="text-center">مكتب الأمن</option>
               </select>
             </div>
           </div>
@@ -284,7 +437,73 @@
             >
               إغلاق
             </button>
-            <button type="button" class="btn btn-primary">حفظ</button>
+            <button type="button" class="btn btn-info">حفظ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUARD ENTRY MODAL -->
+    <div
+      id="GuardEntryModal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="guardModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="guardModalLabel">
+              تسجيل موظف أمن جديد
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="ddlOfficesGuardModal">
+                <span class="required">*</span>
+                اختر مكتب الأمن:
+              </label>
+              <select
+                id="ddlOfficesGuardModal"
+                class="form-control form-control-sm select"
+              >
+                <option>...</option>
+                <option>مكتب أمن الهيئة</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ddlGuardsGaurdModal">
+                <span class="required">*</span>
+                اختر موظف الأمن:
+              </label>
+              <select
+                id="ddlGuardsGaurdModal"
+                class="form-control form-control-sm select"
+              >
+                <option>...</option>
+                <option>غانم سالم سعيد المرزوقي</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              إغلاق
+            </button>
+            <button type="button" class="btn btn-info">حفظ</button>
           </div>
         </div>
       </div>
@@ -300,7 +519,7 @@
     <!-- CUSTOM JS -->
     <script>
       $(document).ready(() => {
-        $("#table").DataTable({
+        $("table").DataTable({
           language: {
             sEmptyTable: "ليست هناك بيانات متاحة في الجدول",
             sLoadingRecords: "جارٍ التحميل...",

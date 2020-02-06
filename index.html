@@ -67,6 +67,17 @@
       input[type="number"] {
         -moz-appearance: textfield;
       }
+
+      .page-item.active .page-link {
+        z-index: 1;
+        color: #ffffff;
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+      }
+
+      .select {
+        padding: 0px;
+      }
     </style>
   </head>
   <body>
@@ -207,7 +218,7 @@
                     <label for="ddlDirectorate">المديرية</label>
                     <select
                       id="ddlDirectorate"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm select"
                     >
                       <option></option>
                       <option>الهيئة</option>
@@ -220,7 +231,7 @@
                     <label for="ddlDepartment">الإدارة</label>
                     <select
                       id="ddlDepartment"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm select"
                     >
                       <option></option>
                       <option>الهيئة</option>
@@ -555,7 +566,7 @@
                     <label for="ddlDirectorate">المديرية</label>
                     <select
                       id="ddlDirectorate"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm select"
                     >
                       <option></option>
                       <option>الهيئة</option>
@@ -567,7 +578,7 @@
                     <label for="ddlDepartment">الإدارة</label>
                     <select
                       id="ddlDepartment"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm select"
                     >
                       <option></option>
                       <option>إدارة تقنية العلومات</option>
@@ -583,7 +594,7 @@
                     <label for="ddlEmployee">اسم الموظف المختص</label>
                     <select
                       id="ddlEmployee"
-                      class="form-control form-control-sm"
+                      class="form-control form-control-sm select"
                     >
                       <option></option>
                       <option>غانم سالم سعيد المرزوقي</option>
@@ -765,7 +776,7 @@
                         <label for="ddlDirectorate">المديرية</label>
                         <select
                           id="ddlDirectorate"
-                          class="form-control form-control-sm"
+                          class="form-control form-control-sm select"
                           disabled
                           required
                         >
@@ -778,7 +789,7 @@
                         <label for="ddlDepartmentDetail">الإدارة</label>
                         <select
                           id="ddlDepartmentDetail"
-                          class="form-control form-control-sm"
+                          class="form-control form-control-sm select"
                           disabled
                           required
                         >
@@ -791,7 +802,7 @@
                         <label for="ddlEmployeeDetail">اسم الموظف المختص</label>
                         <select
                           id="ddlEmployeeDetail"
-                          class="form-control form-control-sm"
+                          class="form-control form-control-sm select"
                           disabled
                         >
                           <option>غانم سالم سعيد المرزوقي</option>
